@@ -1,0 +1,278 @@
+/** @format */
+
+@import url(//fonts.googleapis.com/css?family=Lato:300:400);
+
+@import url("https://fonts.googleapis.com/css?family=Lalezar|Pacifico");
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  color: #fff;
+  overflow: none;
+}
+
+.night {
+  font-family: "Lalezar", cursive;
+  font-size: 1.8em;
+}
+.day {
+  font-family: "Pacifico", cursive;
+  font-size: 1.5em;
+}
+
+.day_night * {
+  transition: 1s all;
+}
+.header .wave-bg {
+  transition: 0.98s all;
+}
+input[type="checkbox"] + label {
+  background-color: #040d1c;
+  width: 200px;
+  height: 80px;
+  border-radius: 50px;
+  display: block;
+  padding: 10px;
+  box-shadow: inset 5px 5px 20px rgba(0, 0, 0, 0.5);
+  z-index: 5;
+  position: absolute;
+  top: calc(50% - 50px);
+  left: calc(50% - 80px);
+  cursor: pointer;
+  cursor: hand;
+}
+
+#a {
+  width: 80px;
+  height: 80px;
+  border-radius: 100px;
+  background-color: #f0f0f0;
+  box-shadow: 0 0 100px rgba(255, 255, 255, 1);
+}
+
+#c1,
+#c2,
+#c3 {
+  background-color: rgba(0, 0, 0, 0.03);
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  position: relative;
+}
+
+#c1 {
+  top: 50px;
+  left: 20px;
+}
+
+#c2 {
+  top: 50px;
+  left: 40px;
+}
+
+#c3 {
+  top: 10px;
+  left: 40px;
+  width: 20px;
+  height: 20px;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"] + label ~ section {
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #0f1f3a;
+}
+
+.waves-fill {
+  fill: #568eef !important;
+}
+
+input[type="checkbox"] + label ~ section .star {
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
+  position: absolute;
+}
+
+#s1 {
+  top: 10%;
+  left: 50%;
+  width: 3px;
+  height: 3px;
+}
+#s2 {
+  top: 90%;
+  left: 30%;
+  width: 2px;
+  height: 2px;
+}
+#s3 {
+  top: 85%;
+  left: 80%;
+  width: 3px;
+  height: 3px;
+}
+#s4 {
+  top: 65%;
+  left: 10%;
+}
+#s5 {
+  top: 40%;
+  left: 90%;
+}
+
+input[type="checkbox"] + label ~ section .night {
+  opacity: 1;
+  position: absolute;
+  top: calc(50% - 120px);
+  left: 30%;
+}
+
+input[type="checkbox"] + label ~ section .day {
+  opacity: 0;
+  position: absolute;
+  top: calc(50% + 90px);
+  left: calc(100% - 150px);
+}
+
+/* ----- CHECKED ----- */
+input[type="checkbox"]:checked + label {
+  background-color: #2a5fba;
+}
+
+input[type="checkbox"]:checked + label ~ section {
+  background-color: #568eef;
+}
+
+input[type="checkbox"]:checked + label ~ section .star {
+  opacity: 0;
+}
+
+input[type="checkbox"]:checked + label #a {
+  background-color: #f4e94e;
+  margin-left: calc(100% - 80px);
+  box-shadow: 0 0 100px rgba(249, 240, 104, 1);
+}
+
+input[type="checkbox"]:checked + label #a * {
+  opacity: 0;
+}
+
+input[type="checkbox"]:checked + label ~ section .night {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+}
+
+input[type="checkbox"]:checked + label ~ section .day {
+  opacity: 1;
+  position: absolute;
+  left: 60%;
+}
+
+h1 {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-size: 48px;
+}
+p {
+  font-family: "Lato", sans-serif;
+  letter-spacing: 1px;
+  font-size: 14px;
+  color: #333333;
+}
+
+.header {
+  position: relative;
+  text-align: center;
+  color: gray;
+}
+.logo {
+  width: 50px;
+  fill: gray;
+  padding-right: 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.inner-header {
+  height: 65vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.flex {
+  /*Flexbox for containers*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.waves {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  margin-bottom: -7px; /*Fix for safari gap*/
+  min-height: 100px;
+  max-height: 150px;
+}
+
+.content {
+  position: relative;
+  height: 20vh;
+  text-align: center;
+}
+
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  /* animation-duration: 20s; */
+}
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height: 40px;
+    min-height: 40px;
+  }
+  .content {
+    height: 30vh;
+  }
+  h1 {
+    font-size: 24px;
+  }
+}
